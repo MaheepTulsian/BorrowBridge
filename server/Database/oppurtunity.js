@@ -32,6 +32,27 @@ const oppo_schema = mongoose.Schema({
     type: Number,
     required: true,
   },
+  Investors:[
+    {
+        wallet_id:{
+            type: String,
+            required: true
+        },
+        Amount:{
+            type: Number,
+            required: true
+        },
+        timestamps: true
+
+    },
+    
+    
+  ],
+  Status: [
+    {
+        type: String
+    }
+]
 });
 
 const Oppo = mongoose.model("Oppo", oppo_schema);
