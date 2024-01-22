@@ -4,7 +4,6 @@ const userName= al[0].DB_USERNAME;
 const password= al[0].DB_PASSWORD;
 
 const uri = `mongodb+srv://${userName}:${password}@cluster0.kg9taog.mongodb.net/?retryWrites=true&w=majority`;
-console.log(uri);
 
 const db = async () => {
      try {
