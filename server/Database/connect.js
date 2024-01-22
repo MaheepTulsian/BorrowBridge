@@ -1,7 +1,7 @@
 import mongoose  from 'mongoose';
-import  mongoCredential  from './server/Database/.env';
+import  MONGO_CONNECTION  from 'dotenv';
 
-const uri = mongoCredential;
+const uri = process.env.MONGO_CONNECTION;
 
 const db = async () => {
      try {
@@ -9,6 +9,7 @@ const db = async () => {
          useNewUrlParser: true,
          useUnifiedTopology: true, // Add this option if you're using a version of the MongoDB Node.js driver that requires it.
        });
+       
        console.log('Database is connected');
      } catch (error) {
        console.error('Error connecting to the database:', error.message);
