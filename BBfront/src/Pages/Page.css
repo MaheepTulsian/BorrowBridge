@@ -1,0 +1,13 @@
+.boxforopp{
+    display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.boxopri{
+    width: 60%;
+    height: max-content;
+}
+.boxople{
+    width: 30%;
+    height: max-content;
+}

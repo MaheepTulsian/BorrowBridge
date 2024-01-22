@@ -1,0 +1,30 @@
+.inputboxleft{
+    width: 100%;
+    border: 1.5px solid black;
+    border-radius: 10px;
+    height: 100%;
+    margin: 10px;
+    padding: 20px;
+}
+.inputboxen{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.inputhead{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.inputenter{
+    width: 40%;
+}
+.inputm{
+    width: 100%;
+}
+.Investbtn{
+    background-color: green;
+    width: 90%;
+}
+h3{
+    margin: 0px;
+}
