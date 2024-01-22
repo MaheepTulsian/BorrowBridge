@@ -1,5 +1,7 @@
 import mongoose  from 'mongoose';
-const uri = 'mongodb+srv://Bridge:TBqXEvwN0NaV9NcG@cluster0.kg9taog.mongodb.net/?retryWrites=true&w=majority';
+import  mongoCredential  from './server/Database/.env';
+
+const uri = mongoCredential;
 
 const db = async () => {
      try {
