@@ -26,15 +26,39 @@
   
 
   /* Apply the navbar styles */
-  nav {
+  .nav_container {
     background-color: #392467;
     width: 100%;
     height: 5rem;
     position: fixed;
     top: 0;
     z-index: 11;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav_right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .quick_links{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
   }
   
+  a{
+    text-decoration: none;
+    color: white;
+    transition: 2ms ease-out;
+  }
+  a:hover{
+    color: blue;
+  }
   /* Responsive Styles */
   @media (max-width: 768px) {
     .container {
