@@ -1,9 +1,10 @@
 import mongoose  from 'mongoose';
-import  dotenv  from 'dotenv';
+import {al} from '../../ale.js'
+const userName= al[0].DB_USERNAME;
+const password= al[0].DB_PASSWORD;
 
-dotenv.config({ path: './server/.env' });
-
-const uri = process.env.MONGO_CONNECTION;
+const uri = `mongodb+srv://${userName}:${password}@cluster0.kg9taog.mongodb.net/?retryWrites=true&w=majority`;
+console.log(uri);
 
 const db = async () => {
      try {
