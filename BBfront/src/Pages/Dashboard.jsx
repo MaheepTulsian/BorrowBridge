@@ -4,7 +4,11 @@ import Cards from '../Components/Cards'
 const Dashboard = () => {
   return (
     <>
-    <Cards/>
+    <Cards
+    title="Sample 1"
+    price="10 GoETH"
+    interest="15%"
+    />
     </>
   )
 }

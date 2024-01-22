@@ -2,7 +2,7 @@
     border: solid 1px black;
     border-radius: 10px;
     width: 200px;
-    height: 250px;
+    height: 200px;
 
 }
 .container {
@@ -19,4 +19,22 @@
     border: solid 1px transparent;
     border-radius: 10px;
     box-sizing: border-box;
+}
+.priceflex{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+h2{
+    margin: 0px;
+}
+.priceamt{
+    margin-top: 2px;
+    margin-bottom: 0px;
+    margin-right: 10px;
+}
+.datalayer{
+    margin: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
