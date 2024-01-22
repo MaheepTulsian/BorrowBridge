@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom';
-import Right from "../Components/Right"
-import Left from '../Components/Left';
+import {Right} from "../Components/Right"
+import {Left}from '../Components/Right';
 import './Page.css'
 
 const Oppurtunity = () => {
