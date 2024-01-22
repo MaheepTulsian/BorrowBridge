@@ -14,6 +14,7 @@ const Application = () => {
             <div className="statusbtn">
                Status
             </div>
+            <div className="contactbtn">
                 Contact us
             </div>
         </div>
