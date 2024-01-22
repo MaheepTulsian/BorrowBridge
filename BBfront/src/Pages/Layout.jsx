@@ -1,16 +1,14 @@
 import React from 'react'
 import { Routes, Route, Navigate, Outlet } from 'react-router-dom';
+import Header from '../Components/Header';
+import Footer from '../Components/Footer';
 
 const Layout = () => {
   return (
     <>
-    <h1>
-        Heading
-    </h1>
+    <Header/>
     <Outlet/>
-    <h2>
-        Footer
-    </h2>
+    <Footer/>
     </>
   )
 }
