@@ -1,9 +1,13 @@
 import React from 'react'
 import './index.css'
 import MRIMAchine from '../assets/MRIMAchine.jpg';
+import { Link } from "react-router-dom";
+
 const Cards = (props) => {
+    const link="../oppurtunity/"+props.id;
   return (
     <>
+    <Link className='linksss' to={link}>
     <div className="outerlayer">
     <div className="image">
         <img src={MRIMAchine} className="Boxheadimg" alt="" />
@@ -20,6 +24,7 @@ const Cards = (props) => {
         </div>
     </div>
     </div>
+    </Link>
     </>
   )
 }
