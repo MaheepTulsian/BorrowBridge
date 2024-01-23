@@ -97,21 +97,20 @@ app.get("/api/wallet/:wallet_id", async (req, res) => {
 });
 
 //updating opportunity status
-app.put("/api/wallet/:wallet_id/status/:Status", async (req, res) => {
+app.put("/api/opps/:oppurtunity_id/status/:Status", async (req, res) => {
   try {
-    const walletId = req.params.wallet_id;
+    const oppurinityId = req.params.oppurtunity_id;
     const newStatus = req.params.Status;
 
-    const user = await User.findOne({ wallet_id: walletId });
+    const user = await User.find({ oppurtunity_id: oppurinityId });
 
     if (!user) {
       return res.status(404).json({ message: "Cannot find user with the given wallet ID" });
     }
 
     await User.findOneAndUpdate(
-      { wallet_id: walletId },
-      { $set: { Status: newStatus } },
-      { new: true } // To return the updated document
+      { oppurtunity_id: oppurinityId },
+      { $set: { Status: newStatus } }
     );
 
     res.status(200).json({ message: "Status updated successfully" });
