@@ -1,6 +1,10 @@
 import mongoose from "mongoose";
 
 const oppo_schema = mongoose.Schema({
+<<<<<<< HEAD
+=======
+
+>>>>>>> bf75ed71bc371fa201b803c89fd78868a00a402f
   title: {
     type: String,
     required: true,
@@ -9,6 +13,10 @@ const oppo_schema = mongoose.Schema({
     type: String,
     required: true,
   },
+  duration_of_time: {
+      type: Number,
+      type: Date,
+    },
   Description: {
     type: String,
     required: true,
