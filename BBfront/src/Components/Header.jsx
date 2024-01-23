@@ -82,14 +82,9 @@ const Header = () => {
       const accounts = await ethereum.request({ method: "eth_requestAccounts" });
       setIsConnected(true);
       setAccounts(accounts);
-<<<<<<< Updated upstream
-      setaddress(accounts)
-      await fetchData(walletaddress);
-=======
       setaddress(accounts);
       Checkuser(accounts[0])
 
->>>>>>> Stashed changes
     } catch (err) {
       console.error("error occured while connecting to MetaMask: ", err)
     }
