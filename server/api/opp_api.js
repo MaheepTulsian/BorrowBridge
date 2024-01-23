@@ -6,7 +6,8 @@ import db from "../Database/connect.js";
 import User from "../../server/Database/userSchema.js";
 import Oppo from "../../server/Database/oppurtunity.js";
 //import Web3 from 'web3';
-//import * as ABI from '/Users/sushilpandey/Documents/Mine/BorrowBridge/BorrowBridge/server/api/ABI.json' assert { type: 'json' };
+//import ABI from './ABI.json';
+//import { data } from 'file:///Users/sushilpandey/Documents/Mine/BorrowBridge/BorrowBridge/server/api/ABI.json' assert { type: 'json' };
 
 
 const app = express();
@@ -15,13 +16,12 @@ const port = process.env.PORT || 3000;
 
 //const infuraApiKey = '15682eba17c4423cbbf1c8f2a1ad3a85'; // Replace with your Infura API key
 //const infuraUrl = `https://goerli.infura.io/v3/${infuraApiKey}`;
-//const web3 = new Web3(infuraUrl);
-
+//const web3 = new Web3(infuraUrl)
 //web3.eth.net.isListening().then((isConnected) => {
 //  console.log(`Connected to Ethereum node: ${isConnected}`);
 //});
-//
-//const contractAddress = "0x65C6A247Fc32DAac1c97B2c629Dcd2f0Fd084853";
+
+const contractAddress = "0x65C6A247Fc32DAac1c97B2c629Dcd2f0Fd084853";
 //console.log('ABI:', ABI);
 //const myContract = new web3.eth.Contract(ABI, "0x65C6A247Fc32DAac1c97B2c629Dcd2f0Fd084853");
 // Middleware
