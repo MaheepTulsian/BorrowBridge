@@ -1,10 +1,7 @@
 import mongoose from "mongoose";
 
 const oppo_schema = mongoose.Schema({
-  oppurtunity_id: {
-    type: String,
-    required: true,
-  },
+
   title: {
     type: String,
     required: true,
@@ -13,6 +10,10 @@ const oppo_schema = mongoose.Schema({
     type: String,
     required: true,
   },
+  duration_of_time: {
+      type: Number,
+      type: Date,
+    },
   Description: {
     type: String,
     required: true,
