@@ -14,3 +14,9 @@
 .form{
     margin: 10px;
 }
+.carddata{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 10px;
+}
