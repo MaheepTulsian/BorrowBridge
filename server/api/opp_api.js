@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors";
 import db from "../Database/connect.js";
-import User from "../../server/Database/userschema.js";
+import User from "../../server/Database/userSchema.js";
 import Oppo from "../../server/Database/oppurtunity.js";
 
 const app = express();
