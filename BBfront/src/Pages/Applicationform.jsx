@@ -2,19 +2,14 @@ import React, { useState } from 'react';
 import { useFormik } from 'formik';
 import './Page.css';
 import { Image } from 'cloudinary-react';
+import {imprt} from '../../al.js'
 
-const cloudinaryUrl = process.env.REACT_APP_CLOUDINARY_URL;
-
-const FileUpload = ({ onFileUpload }) => {
-  const [selectedFile, setSelectedFile] = useState(null);
-
-  
 
 const ApplicationForm = () => {
   const formik = useFormik({
     initialValues: {
       title: '',
-      thumbnail: null,
+      thumbnail: '',
       documentsLink: '',
       amountRequested: '',
       description: '',
@@ -39,8 +34,8 @@ const ApplicationForm = () => {
           <input className="form-input" type="text" name="title" value={formik.values.title} onChange={formik.handleChange} required />
         </label>
         <label className="form-label">
-          Thumbnail:
-          <input className="form-input" type="file" name="thumbnail" onChange={(event) => formik.setFieldValue("thumbnail", event.target.files[0])} required />
+          Thumbnail URL:
+          <input className="form-input" type="text" name="thumbnailLink" value={formik.values.thumbnailLink} onChange={formik.handleChange} required />
         </label>
         <label className="form-label">
           Documents (PDF file link):
@@ -85,6 +80,6 @@ const ApplicationForm = () => {
       </form>
     </div>
   );
-};
+  }
 
 export default ApplicationForm;
