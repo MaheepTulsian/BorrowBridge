@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 
 const oppo_schema = mongoose.Schema({
-
   title: {
     type: String,
     required: true,
