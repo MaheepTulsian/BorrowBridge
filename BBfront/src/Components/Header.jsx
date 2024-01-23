@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import MetaMaskOnboarding from '@metamask/onboarding';
-import './Comp.css';
+// import './Comp.css';
+import './Header.css'
 import usestore from '../State/store.js'
 
 const Header = () => {
@@ -58,28 +59,26 @@ const Header = () => {
   }
 
   return (
-    <div className="container nav_container">
-      <div className="nav_left">
-        <a className="quick_links" href="index.html">
-          <h3>LOGO</h3>
-        </a>
-      </div>
+    <nav>
+        <div class="deck1">
+            <img src="#" alt="logo" class="logo"/>
+            
+        </div>
 
-      <div className="nav_right">
-        <ul className="nav_menu_horizontal">
-          <li><a className="quick_links" href="index.html">Home</a></li>
-          <li><a className="quick_links" href="about.html">Borrow</a></li>
-          <li><a className="quick_links" href="contact.html">Dashboard</a></li>
-          <li className="contact_button">
-            <button onClick={isMetamaskInstalled ? connectMetaMask : installMetaMask} disabled={!isMetamaskInstalled}>
+        <div class="deck2 flex-center">
+            <div class="about quick-link flex-center">About Us</div>
+            <div class="services quick-link flex-center">Services</div>
+            <div class="contact quick-link flex-center">Contact</div>
+            
+            <button class="nav-btn" onClick={isMetamaskInstalled ? connectMetaMask : installMetaMask} disabled={!isMetamaskInstalled}>
               {isConnected ? `${accounts[0]}` : 'Register with MetaMask'}
             </button>
-          </li>
-        </ul>
-      </div>
-      
-    </div>
+        </div>
+    </nav>
+
   );
 };
 
 export default Header;
+
+
