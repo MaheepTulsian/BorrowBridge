@@ -39,16 +39,16 @@ const Header = () => {
   return (
     <div className="container nav_container">
       <div className="nav_left">
-        <a href="index.html">
+        <a className="quick_links" href="index.html">
           <h3>LOGO</h3>
         </a>
       </div>
 
       <div className="nav_right">
         <ul className="nav_menu_horizontal">
-          <li className="quick_links"><a  href="index.html">Home</a></li>
-          <li className="quick_links"><a  href="about.html">About</a></li>
-          <li className="quick_links"><a  href="contact.html">Contact Us</a></li>
+          <li><a className="quick_links" href="index.html">Home</a></li>
+          <li><a className="quick_links" href="about.html">Borrow</a></li>
+          <li><a className="quick_links" href="contact.html">DashBoard</a></li>
           <li className="contact_button">
             <button onClick={isMetamaskInstalled ? connectMetaMask : installMetaMask} disabled={!isMetamaskInstalled}>
               {isConnected ? `${accounts[0]}` : 'Register with MetaMask'}
