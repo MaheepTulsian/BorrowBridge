@@ -47,10 +47,7 @@ app.get("/api/opps/allopps", async (req, res) => {
 //searching opportunity by opportunity_id
 app.get("/api/opps/:oppid" , async(req, res)=>{
   try{
-    const oppo = await Oppo.find({ oppurtunity_id : req.params.oppid});
-
-
-
+    const oppo = await Oppo.find({_id : req.params.oppid});
     if (oppo.length === 0) {
       return res
         .status(404)
