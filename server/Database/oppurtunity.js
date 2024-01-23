@@ -13,6 +13,10 @@ const oppo_schema = mongoose.Schema({
     type: String,
     required: true,
   },
+  duration_of_time: {
+      type: Number,
+      type: Date,
+    },
   Description: {
     type: String,
     required: true,
