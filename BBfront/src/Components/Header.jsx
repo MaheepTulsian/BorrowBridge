@@ -2,7 +2,25 @@ import React, { useEffect, useState } from 'react';
 import MetaMaskOnboarding from '@metamask/onboarding';
 // import './Comp.css';
 import './Header.css'
-import usestore from '../State/store.js'
+import usestore from '../State/store.js' 
+
+
+const fetchData = async (walletAddress) => {
+  try {
+    const response = await fetch(`http://localhost:3000/api/wallet/${walletAddress}`);
+    if (!response.ok) {
+      if(response.status==404){
+        //CREATE POPUP TO ENTER USER's NAME & EMAAIL
+      }
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    throw error;
+  }
+};
 
 const Header = () => {
   const [isMetamaskInstalled, setIsMetamaskInstalled] = useState(false);
@@ -11,6 +29,8 @@ const Header = () => {
 
   const PrivateRoute = ({ element, path }) => {
     const [isLoggedIn, setLoggedIn] = useState(false);
+
+    
   
     useEffect(() => {
       if (walletaddress) {
@@ -44,6 +64,7 @@ const Header = () => {
       setIsConnected(true);
       setAccounts(accounts);
       setaddress(accounts)
+      await fetchData(walletaddress);
     } catch (err) {
       console.error("error occured while connecting to MetaMask: ", err)
     }
