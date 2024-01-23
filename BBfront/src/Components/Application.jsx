@@ -1,28 +1,27 @@
 import React from 'react'
-import './index.css'
+// import './index.css'
+import './Application.css'
 import MRIMAchine from '../assets/MRIMAchine.jpg';
 import { Link } from 'react-router-dom';
 
 const Application = (props) => {
   const link = '/borrow/'+props.id;
   return (
-    <Link className='linksss' to={link}>
-    <div className="outerlayer">
-    <div className="image">
-        <img src={MRIMAchine} className="Boxheadimg" alt="" />
-    </div>
-    <div className="datalayer">
-        <h2>Application</h2>
-        <div className="Applicationflex">
-            <div className="statusbtn">
-               Status
-            </div>
-            <div className="contactbtn">
-                Contact us
+    <Link className='application-card' to={link}>
+        <div className="card-image">
+            <img src={MRIMAchine} className="Boxheadimg" alt="" />
+        </div>
+        <div className="card-data">
+            <h2>Application Title</h2>
+            <div className="card-btn">
+                <div className="contact-btn">
+                    Contact us
+                </div>
+                <div className="status-btn">
+                  Status
+                </div>
             </div>
         </div>
-    </div>
-    </div>
     </Link>
   )
 }
