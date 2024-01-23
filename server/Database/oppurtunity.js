@@ -11,6 +11,7 @@ const oppo_schema = mongoose.Schema({
   },
   Thumbnail: {
     type: String,
+    required: true,
   },
   Description: {
     type: String,
@@ -24,10 +25,15 @@ const oppo_schema = mongoose.Schema({
     type: String,
     required: true,
   },
-  Token: {
+  token_Requested: {
     type: Number,
     required: true,
   },
+  Location: {
+    type: String,
+    required: true,
+  },
+
   Amount_Collected: {
     type: Number,
     required: true,
