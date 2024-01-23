@@ -24,6 +24,21 @@ const Borrow = () => {
         title="Application"
         status= "Pending"
         />
+        <Application
+        id="oppid7"
+        title="Application"
+        status= "Pending"
+        />
+        <Application
+        id="oppid7"
+        title="Application"
+        status= "Pending"
+        />
+        <Application
+        id="oppid7"
+        title="Application"
+        status= "Pending"
+        />
     </div>
     </>
   )
