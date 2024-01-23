@@ -1,5 +1,6 @@
 import React from 'react'
 import Carddata from '../Components/Carddata'
+import asset from "../assets/deposit.png"
 import './Page.css'
 
 const Applicationstatus = () => {
@@ -8,27 +9,24 @@ const Applicationstatus = () => {
     <div className="headapplication">
         <div className="header">
             <div className="title">
-                <h2>TESTING NAME</h2>
+                <h1>Gym Khana</h1>
             </div>
             <div className="status">
-                STATUS
+                <h1>Pending</h1>
             </div>
         </div>
+
         <div className="carddata">
             <div className="cardamountcollected">
-            <Carddata
-        title="50 Geth"
-        subtitle = "Amount Collected"
-        />
+                <Carddata title="50 GoerliETH" subtitle = "Amount Collected"/>
             </div>
+        
             <div className="cardamountwithdrawn">
-            <Carddata
-        title="10Geth"
-        subtitle = "Amount Withdrawn"
-        />
+                <Carddata title="10 GoerliETH" subtitle = "Amount Withdrawn"/>
             </div>
         </div>
-        <center><button>Withdraw</button></center>
+
+        <center> <button className='wdr-btn'> <img src={asset} className='wdr-icn'/> Withdraw</button> </center>
     </div>
     </>
   )

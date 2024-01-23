@@ -25,3 +25,36 @@
     display: grid;
     grid-template-rows: 4fr;
 }
+
+.headapplication{
+    height: 90vh;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px 20px;
+}
+.carddata{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 15px 30px;
+}
+.cardamountcollected, .cardamountwithdrawn{
+    padding: 15px 30px;
+    border: 1px black solid;
+    border-radius: 10px;
+    background-color: palegoldenrod;
+}
+.wdr-icn{
+    width: 25px;
+    height: 25px;
+}
+.wdr-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 20px;
+}
