@@ -18,22 +18,31 @@ const userSchema = mongoose.Schema({
   },
   Investment: [
     {
-      oppurtunity_id: String,
+     opportunity_id: String,
       title: String,
       Amount_Investment: Number,
-      Date_of_investment: String,
+      Date_of_investment: {
+            type: String,
+            default: Date.now(),
+      }
     },
   ],
   Borrowed: [
     {
-      oppurtunity_id: String,
+     opportunity_id: String,
       title: String,
       Amount_Borrowed: Number,
       outstand_Amount: Number,
-      Date_of_Borrow_Request: String,
+      Date_of_Borrow_Request:{
+          type: String,
+            default: Date.now(),
+      }
     },
   ],
-  Amount_Total_Invested: Number,
+  Total_Amount_Invested: {
+     type: Number,
+     default: 0,
+  },
 } ,
 {
      timestamps: true,

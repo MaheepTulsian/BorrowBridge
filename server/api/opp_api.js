@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
   res.send("I am live");
 });
 
-//adding oppurtunity in database in oppurtunity collection
+//adding opportunity_id in database in opportunity collection
 app.post("/api/opps", async (req, res) => {
   try {
     const oppo = await Oppo.create(req.body);
@@ -29,7 +29,7 @@ app.post("/api/opps", async (req, res) => {
   }
 });
 
-//searching all oppurtunities
+//searching all opportunity
 app.get("/api/opps/allopps", async (req, res) => {
   try {
     const oppo = await Oppo.find();
@@ -43,10 +43,13 @@ app.get("/api/opps/allopps", async (req, res) => {
   }
 });
 
-//searching oppurtunity by oppurtunity id
-app.get("/api/opps/:oppid", async (req, res) => {
-  try {
-    const oppo = await Oppo.find({ oppurtunity_id: req.params.oppid });
+
+//searching opportunity by opportunity_id
+app.get("/api/opps/:oppid" , async(req, res)=>{
+  try{
+    const oppo = await Oppo.find({ opportunity_id : req.params.oppid});
+
+
 
     if (oppo.length === 0) {
       return res
@@ -98,12 +101,12 @@ app.get("/api/wallet/:wallet_id", async (req, res) => {
 });
 
 //updating opportunity status
-app.put("/api/opps/:oppurtunity_id/status/:Status", async (req, res) => {
+app.put("/api/opps/:opportunity_id/status/:Status", async (req, res) => {
   try {
-    const oppurinityId = req.params.oppurtunity_id;
+    const opportunityId = req.params.opportunity_id;
     const newStatus = req.params.Status;
 
-    const user = await User.find({ oppurtunity_id: oppurinityId });
+    const user = await User.find({ opportunity_id: opportunityId});
 
     if (!user) {
       return res
@@ -112,7 +115,7 @@ app.put("/api/opps/:oppurtunity_id/status/:Status", async (req, res) => {
     }
 
     await User.findOneAndUpdate(
-      { oppurtunity_id: oppurinityId },
+      { opportunity_id: opportunityId },
       { $set: { Status: newStatus } }
     );
 
@@ -124,15 +127,45 @@ app.put("/api/opps/:oppurtunity_id/status/:Status", async (req, res) => {
 });
 
 //INVEST WEB3js function
-app.post("/api/wallet/:wallet_id/amount/:Amount", async (req, res) => {
+app.put("/api/invest/wallet/:wallet_id/opportunity_id/:opportunity_id", async (req, res) => {
   try {
-    const walletId = req.params.wallet_id;
-    const Amount = req.params.Amount;
+    const wallet_id = req.params.wallet_id;
+    const opportunity_id = req.params.opportunity_id;
+    const { title, Amount_Investment } = req.body;
 
-    res.status(200).json({ message: "successfully" });
+    const user = await User.findOne({ wallet_id: wallet_id });
+    const oppo = await Oppo.findOne({ opportunity_id: opportunity_id });
+
+    if (!user) {
+      return res.status(404).json({ message: "User not found with the given wallet ID" });
+    }
+
+    if (!oppo) {
+      return res.status(404).json({ message: "Opportunity not found with the given ID" });
+    }
+
+    // Add the new investment to the investments array of the user
+    user.Investments.push({ opportunity_id, title, Amount_Investment });
+
+    // Update the total invested amount for the user
+    user.Total_Amount_Invested += Amount_Investment;
+
+    // Save the updated user document
+    await user.save();
+
+    // Update the total amount collected for the opportunity
+    oppo.Total_Amount_Collected = (oppo.Total_Amount_Collected || 0) + Amount_Investment;
+
+    // Add an investor to the investors array of the opportunity
+    oppo.Investors.push({ wallet_id, Amount_Investment });
+
+    // Save the updated opportunity document
+    await oppo.save();
+
+    res.status(200).json({ message: "Investment added successfully" });
   } catch (error) {
     console.error(error.message);
-    res.status(500).json({ message: error.message });
+    res.status(500).json({ message: "Internal server error" });
   }
 });
 
