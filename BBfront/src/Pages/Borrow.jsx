@@ -1,5 +1,6 @@
 import React from 'react'
 import "../Components/Oppcomp.css"
+import "./Page.css"
 import Application from '../Components/Application'
 
 const Borrow = () => {

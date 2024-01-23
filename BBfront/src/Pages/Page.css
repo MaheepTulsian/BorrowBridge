@@ -20,3 +20,8 @@
     justify-content: space-evenly;
     margin: 10px;
 }
+
+.card-grid{
+    display: grid;
+    grid-template-rows: 4fr;
+}
