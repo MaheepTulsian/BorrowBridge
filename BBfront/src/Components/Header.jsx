@@ -4,7 +4,7 @@ import './Header.css'
 import usestore from '../State/store.js' 
 import logo from '../assets/logo.png'
 import Popup from '../Components/Popup.jsx'
-
+import { Link } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
 
 async function Checkuser(wallet) {
@@ -104,9 +104,11 @@ const Header = () => {
             <img src={logo} alt="logo" class="logo"/>
         </div>
         <div class="deck2 flex-center">
+
             <div class="about quick-link flex-center"><a href="/dashboard">Invest</a></div>
             <div class="services quick-link flex-center"><a href="/borrow">Borrow</a></div>
             <div class="contact quick-link flex-center"><a href="/contactUS">Contact Us</a></div>
+
             
             <button class="nav-btn" onClick={isMetamaskInstalled ? connectMetaMask : installMetaMask} disabled={!isMetamaskInstalled}>
               {isConnected ? `${accounts[0]}` : 'Register with MetaMask'}

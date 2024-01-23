@@ -1,9 +1,32 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import "../Components/Opportunity.css"
 import "./Page.css"
 import Application from '../Components/Application'
 
 const Borrow = () => {
+
+  const [opps, setOpps] = useState([]);
+
+  const fetchAllOpps = async () => {
+    try {
+      const response = await fetch('localhost:3000/api/opps/allopps');
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log(data);
+      setOpps(data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      // Handle error, set opps to an empty array or handle it as needed
+    }
+  };
+
+  useEffect(() => {
+    fetchAllOpps();
+  }, [])
   return (
     <>
     <center>
