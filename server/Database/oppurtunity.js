@@ -1,10 +1,6 @@
 import mongoose from "mongoose";
 
 const oppo_schema = mongoose.Schema({
-  opportunity_id: {
-    type: String,
-    required: true,
-  },
   title: {
     type: String,
     required: true,
