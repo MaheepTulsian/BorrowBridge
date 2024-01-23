@@ -28,8 +28,14 @@ app.post("/api/opps", async (req, res) => {
 
 app.get("/api/opps/:oppid" , async(req, res)=>{
   try{
-    const oppo = await Oppo.findOne({oppurtunity_id: req.params.oppid});
+    const oppo = await Oppo.find({oppurtunity_id: req.params.oppid});
+
+    if (oppo.length === 0) {
+      return res.status(404).json({ message: "Cannot find user with the given oppurinity ID" });
+    }
+
     res.status(200).json(oppo);
+    
   }catch(error){
     console.log(error.message);
     res.status(500).json({ message: error.message });
