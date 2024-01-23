@@ -120,6 +120,19 @@ app.put("/api/opps/:oppurtunity_id/status/:Status", async (req, res) => {
   }
 });
 
+//INVEST WEB3js function
+app.post("/api/wallet/:wallet_id/amount/:Amount", async (req, res) => {
+  try {
+    const walletId = req.params.wallet_id;
+    const Amount = req.params.Amount;
+
+    res.status(200).json({ message: "successfully" });
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).json({ message: error.message });
+  }
+});
+
 
 const satrt = async () => {
   try {
