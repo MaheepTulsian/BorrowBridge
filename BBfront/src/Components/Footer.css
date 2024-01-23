@@ -1,4 +1,8 @@
 .footer-container {
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    z-index: -10;
     padding: 50px var(--padding-inline—section);
     background-color: #371b58;
     color: #fff;
