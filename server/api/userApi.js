@@ -44,28 +44,30 @@ app.get("/api/wallet/:wallet_id", async (req, res) => {
      }
    });
    
-app.put("/api/wallet/:wallet_id/status/:Status", async (req, res) => {
+   app.put("/api/wallet/:wallet_id/status/:Status", async (req, res) => {
      try {
-       const user = await User.findOne({ wallet_id: req.params.wallet_id });
+       const walletId = req.params.wallet_id;
+       const newStatus = req.params.Status;
    
-       if (user.length === 0) {
+       const user = await User.findOne({ wallet_id: walletId });
+   
+       if (!user) {
          return res.status(404).json({ message: "Cannot find user with the given wallet ID" });
        }
    
-       const updatedUser = await User.findOneAndUpdate(
-          { wallet_id: walletId },
-          { $set: { fieldNameToUpdate: updatedValue } },
-          { new: true } // To return the updated document
-        );
-       await user.save();
-       res.status(200).json(user);
-
+       await User.findOneAndUpdate(
+         { wallet_id: walletId },
+         { $set: { Status: newStatus } },
+         { new: true } // To return the updated document
+       );
+   
+       res.status(200).json({ message: "Status updated successfully" });
      } catch (error) {
        console.error(error.message);
        res.status(500).json({ message: error.message });
      }
    });
-
+   
 
 app.get('/api/getall', async (req, res) => {
      try {
