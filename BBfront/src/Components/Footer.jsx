@@ -32,17 +32,8 @@ const Footer = () => {
         </div>
 
         <div class="footer_4">
-            <h4>Contact Us</h4>
-            <div>
-                <p>+919****38</p>
-                <p>abcderg**@gmail.com</p>
-            </div>
-            <ul class="footer_socials">
-                <li><a href="#"><i class="uil uil-facebook-f"></i></a></li>
-                <li><a href="#"><i class="uil uil-instagram-alt"></i></a></li>
-                <li><a href="#"><i class="uil uil-twitter"></i></a></li>
-                <li><a href="#"><i class="uil uil-linkedin-alt"></i></a></li>
-            </ul>
+            <h4>Let's Connect</h4>
+            
         </div>
     </div>
     </>
