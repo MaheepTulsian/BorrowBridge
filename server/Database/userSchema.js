@@ -18,7 +18,7 @@ const userSchema = mongoose.Schema({
   },
   Investment: [
     {
-     opportunity_id: String,
+     oppurtunity_id: String,
       title: String,
       Amount_Investment: Number,
       Date_of_investment: {
@@ -29,7 +29,7 @@ const userSchema = mongoose.Schema({
   ],
   Borrowed: [
     {
-     opportunity_id: String,
+     oppurtunity_id: String,
       title: String,
       Amount_Borrowed: Number,
       outstand_Amount: Number,

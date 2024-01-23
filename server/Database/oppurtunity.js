@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const oppo_schema = mongoose.Schema({
-  opportunity_id: {
+  oppurtunity_id: {
     type: String,
     required: true,
   },
@@ -42,11 +42,10 @@ const oppo_schema = mongoose.Schema({
     {
         wallet_id:{
             type: String,
-            required: true
         },
         Amount_Investment:{
             type: Number,
-            required: true
+            
         },
     },  
   ],
