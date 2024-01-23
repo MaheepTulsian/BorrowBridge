@@ -3,6 +3,7 @@ import MetaMaskOnboarding from '@metamask/onboarding';
 // import './Comp.css';
 import './Header.css'
 import usestore from '../State/store.js' 
+import logo from '../assets/logo.png'
 
 
 const fetchData = async (walletAddress) => {
@@ -82,7 +83,7 @@ const Header = () => {
   return (
     <nav>
         <div class="deck1">
-            <img src="#" alt="logo" class="logo"/>
+            <img src={logo} alt="logo" class="logo"/>
             
         </div>
 
