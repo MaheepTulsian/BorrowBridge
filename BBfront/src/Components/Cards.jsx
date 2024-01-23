@@ -11,15 +11,10 @@ const Cards = (props) => {
         <div className="card-image">
             <img src={MRIMAchine} className="Boxheadimg" alt="" />
         </div>
-        <div className="card-data">
+        <div className="oppertunity-card-data">
             <h2>{props.title}</h2>
-            <div className="priceflex">
-                <div className="priceamt">
-                    {props.price}
-                </div>
-                <div className="priceinc">
-                    {props.interest}
-                </div>
+            <div className="amount">
+                {props.price} GoerliETH
             </div>
         </div>
     </Link>
