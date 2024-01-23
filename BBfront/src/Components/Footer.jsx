@@ -1,12 +1,13 @@
 import React from 'react'
 import './Footer.css'
+import logo from '../assets/logo.png'
 
 const Footer = () => {
   return (
     <footer>
         <div class="footer-container">
             <a href="#" class="company-logo">
-                <img src="#" alt="companmy logo"/>
+                <img src={logo} alt="companmy logo"/>
             </a>
             <div class="link-column flex-center">
                 <h4>About Us</h4>

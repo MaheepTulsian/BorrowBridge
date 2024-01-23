@@ -4,6 +4,7 @@
     height: 100%;
     margin: 10px;
     padding: 20px;
+    
 }
 .inputboxen{
     display: flex;
@@ -21,7 +22,8 @@
     width: 100%;
 }
 .Investbtn{
-    background-color: green;
+    background-color: #371B58;
+    color: #fff;
     width: 90%;
     padding: 10px;
 }
@@ -38,7 +40,18 @@ h3{
     display: flex;
     align-items:center;
     justify-content: space-between;
-    padding: 10px;
+    padding-block: 10px;
+}
+.dbtn{
+  width: 25px;
+  height: 25px;
+}
+.downbtn{
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 .Borrowbtn{
     background-color: purple;
@@ -84,4 +97,35 @@ h3{
   
   .form-checkbox {
     margin-right: 5px;
+  }
+
+  .locationopp{
+    margin-top: 10px;
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  .locationopp{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px;
+  }
+  .imageloc{
+   
+    height: 50px;
+  }
+
+
+
+  .content-area{
+    height: 90vh;
+  }
+  .headimage{
+    width: 100%;
+    aspect-ratio: 3/1;
   }
