@@ -18,6 +18,7 @@
     margin-bottom: 5px;
 }
 .card-data>h2{
+    font-size: 22px;
     color: black;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -45,4 +46,7 @@
 }
 .applicationcard{
     margin: 10;
+}
+.oppertunity-card-data{
+    color: black;
 }

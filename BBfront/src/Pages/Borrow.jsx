@@ -1,5 +1,5 @@
 import React from 'react'
-import "../Components/Oppcomp.css"
+import "../Components/Opportunity.css"
 import "./Page.css"
 import Application from '../Components/Application'
 
