@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import MetaMaskOnboarding from '@metamask/onboarding';
-// import './Comp.css';
 import './Header.css'
 import usestore from '../State/store.js' 
 import logo from '../assets/logo.png'
+import investorDashboard from '../Pages/Dashboard.jsx'
 import Popup from '../Components/Popup.jsx'
+
 import { Navigate } from 'react-router-dom';
 
 async function Checkuser(wallet) {
@@ -35,16 +36,18 @@ const Header = () => {
   
       try {
         const response = await fetch(`http://localhost:3000/api/wallet/${walletAddress}`);
-        if (!response.ok) {
-            return(
-              <Navigate to="/login" replace={true} />
-              )
+        if (response.ok)
+        {
+          return(
+            <Navigate to="/login" replace={true} />
+          )
         }
         const data = await response.json();
         return data;
-      } catch (error) {
-        console.error('Error fetching data:', error);
-        throw error;
+      } 
+      catch (error) {
+      console.error('Error fetching data:', error);
+      throw error;
       }
     };
   
@@ -107,7 +110,7 @@ const Header = () => {
             <img src={logo} alt="logo" class="logo"/>
         </div>
         <div class="deck2 flex-center">
-            <div class="about quick-link flex-center">Invest</div>
+            <div class="about quick-link flex-center" onClick={investorDashboard}>Invest</div>
             <div class="services quick-link flex-center">Borrow</div>
             <div class="contact quick-link flex-center">Contact Us</div>
             
