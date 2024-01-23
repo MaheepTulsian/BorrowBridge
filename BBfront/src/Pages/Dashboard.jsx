@@ -29,56 +29,13 @@ const Dashboard = () => {
   return (
     <>
     <div className="card-grid">
-        <Cards
-          key="101"
-          id="101"
-          title="Tea stall"
-          price="10"
-          interest="15%"
-        />
-        <Cards
-          key="101"
-          id="101"
-          title="Tea stall"
-          price="10"
-          interest="15%"
-        />
-        <Cards
-          key="101"
-          id="101"
-          title="Tea stall"
-          price="10"
-          interest="15%"
-        />
-        <Cards
-          key="101"
-          id="101"
-          title="Tea stall"
-          price="10"
-          interest="15%"
-        />
-        <Cards
-          key="101"
-          id="101"
-          title="Tea stall"
-          price="10"
-          interest="15%"
-        />
-        <Cards
-          key="101"
-          id="101"
-          title="Tea stall"
-          price="10"
-          interest="15%"
-        />
         
       {opps.map(item => (
         <Cards
           key={item._id}
           id={item._id}
           title={item.title}
-          price="10"
-          interest="15%"
+          img={item.Thumbnail}
         />
       ))}
        </div>

@@ -7,6 +7,7 @@ import './Page.css'
 
 const Oppurtunity = () => {
     const { id } = useParams();
+    
   return (
     <>
     <div className="boxforopp">

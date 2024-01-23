@@ -5,6 +5,7 @@ import "../Components/Opportunity.css"
 import MRIMAchine from '../assets/MRIMAchine.jpg';
 
 
+
 const Left = () => {
     return (
       <>
