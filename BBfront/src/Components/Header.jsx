@@ -87,9 +87,9 @@ const Header = () => {
         </div>
 
         <div class="deck2 flex-center">
-            <div class="about quick-link flex-center">About Us</div>
-            <div class="services quick-link flex-center">Services</div>
-            <div class="contact quick-link flex-center">Contact</div>
+            <div class="about quick-link flex-center">Invest</div>
+            <div class="services quick-link flex-center">Borrow</div>
+            <div class="contact quick-link flex-center">Contact Us</div>
             
             <button class="nav-btn" onClick={isMetamaskInstalled ? connectMetaMask : installMetaMask} disabled={!isMetamaskInstalled}>
               {isConnected ? `${accounts[0]}` : 'Register with MetaMask'}
