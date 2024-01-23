@@ -1,7 +1,7 @@
 .footer-container {
     position: relative;
     bottom: 0;
-    width: 100vw;
+    width: 100%;
     z-index: -10;
     padding: 50px var(--padding-inline—section);
     background-color: #371b58;

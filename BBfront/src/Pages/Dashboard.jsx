@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import "./page.css";
 import Cards from '../Components/Cards';
 
 const Dashboard = () => {
@@ -25,13 +26,35 @@ const Dashboard = () => {
   }, []); // Empty dependency array ensures the effect runs only once on mount
 
   return (
-    <><div className="card-grid">
+    <>
+    <div className="card-grid">
+    <Cards
+          key={item._id}
+          id={item._id}
+          title={item.title}
+          price="10"
+          interest="15%"
+        />
+        <Cards
+          key={item._id}
+          id={item._id}
+          title={item.title}
+          price="10"
+          interest="15%"
+        />
+        <Cards
+          key={item._id}
+          id={item._id}
+          title={item.title}
+          price="10"
+          interest="15%"
+        />
       {opps.map(item => (
         <Cards
           key={item._id}
           id={item._id}
           title={item.title}
-          price="10Geth"
+          price="10"
           interest="15%"
         />
       ))}
