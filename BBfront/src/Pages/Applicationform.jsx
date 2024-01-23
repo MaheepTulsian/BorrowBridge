@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useFormik } from 'formik';
 import './Page.css';
-import { Image } from 'cloudinary-react';
-import {imprt} from '../../al.js'
+
 
 
 const ApplicationForm = () => {
