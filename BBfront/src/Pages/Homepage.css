@@ -1,0 +1,141 @@
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.feature-section,
+.hero-section{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    padding: 0px var(--padding-inline—section);
+}
+.hero-left{
+    flex-direction: column;
+    align-items: flex-start;
+    width: 60%;
+}
+.hero-left-heading{
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+.hero-left-content{
+    font-size: 20px;
+    width: 80%;
+    margin-bottom: 20px;
+}
+.hero-left-btn{
+    height: 7.5vh;
+    gap: 20px;
+}
+.hero-right{
+    width: 40%;
+}
+.hero-right img{
+    width: 100%;
+    height: auto;
+}
+
+.feature-section{
+    justify-content: space-between;
+}
+.feature-left{
+    width: 40%;
+}
+.feature-left img{
+    width: 100%;
+    height: auto;
+}
+.feature-right{
+    flex-direction: column;
+    align-items: flex-start;
+    width: 50%;
+}
+.feature-right-heading{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.feature-right-content{
+    font-size: 15px;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+
+.action-section{
+    padding: 0px var(--padding-inline—section);
+}
+.action-heading{
+    padding: 20px;
+    text-align: center;
+}
+.action-content{
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+section {
+    width: 30%;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: 0.2s ease-out;
+}
+section img{
+    width: 100%;
+    height: 150px;
+    margin-bottom: 10px;
+}
+section h1 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+section p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+
+.faq {
+    padding: 30px var(--padding-inline—section);
+    flex-direction: column;
+    gap: 20px;
+}
+
+.faq-question{
+    width: 60vw;
+    border: 1px #000 solid;
+    padding: 10px 30px;
+}
+.faq-question-heading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.faq-question-heading p{
+    font-size: 25px;
+    cursor: pointer;
+    
+}
+.faq-answer {
+    display: none;
+    padding: 15px;
+}
+
+
+.cta{
+    background-color: #371B58;
+    color: snow;
+    height: 40vh;
+    width: 100%;
+    flex-direction: column;
+    gap: 15px;
+}
+.cta-btn{
+    margin-top: 15px;
+    padding: 20px;
+    background-color: snow;
+    color: #371B58;
+}

@@ -3,9 +3,8 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors";
 import db from "../Database/connect.js";
-import User from '../../server/Database/userschema.js';
+import User from "../../server/Database/userSchema.js";
 import Oppo from "../../server/Database/oppurtunity.js";
-
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -35,50 +34,53 @@ app.get("/api/opps/allopps", async (req, res) => {
   try {
     const oppo = await Oppo.find();
     res.status(200).json(oppo);
-    if(oppo.length === 0){
+    if (oppo.length === 0) {
       return res.status(404).json({ message: "Cannot find any oppurtunity" });
     }
   } catch (error) {
     console.log(error.message);
     res.status(500).json({ message: error.message });
   }
-})
+});
+
 
 //searching opportunity by opportunity_id
 app.get("/api/opps/:oppid" , async(req, res)=>{
   try{
     const oppo = await Oppo.find({ oppurtunity_id : req.params.oppid});
 
+
+
     if (oppo.length === 0) {
-      return res.status(404).json({ message: "Cannot find user with the given oppurinity ID" });
+      return res
+        .status(404)
+        .json({ message: "Cannot find user with the given oppurinity ID" });
     }
 
     res.status(200).json(oppo);
-
-  }catch(error){
+  } catch (error) {
     console.log(error.message);
     res.status(500).json({ message: error.message });
   }
-}
-);
-
-// adding user in database in user collection
-app.post('/api/add', async (req, res) => {
-  try {
-    const user = new User(req.body);
-    await user.save()
-    .then((saveduser) => {
-     console.log('User saved:', saveduser);
-   })
-   .catch((error) => {
-     console.error('Error saving user:', error.message);
-   });
-    res.json(user);
-  } catch (error) {
-    res.status(500).json({ error: 'Internal Server Error' });
-  }
 });
 
+// adding user in database in user collection
+app.post("/api/add", async (req, res) => {
+  try {
+    const user = new User(req.body);
+    await user
+      .save()
+      .then((saveduser) => {
+        console.log("User saved:", saveduser);
+      })
+      .catch((error) => {
+        console.error("Error saving user:", error.message);
+      });
+    res.json(user);
+  } catch (error) {
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
 
 //searching user by wallet id
 app.get("/api/wallet/:wallet_id", async (req, res) => {
@@ -86,7 +88,9 @@ app.get("/api/wallet/:wallet_id", async (req, res) => {
     const user = await User.find({ wallet_id: req.params.wallet_id });
 
     if (user.length === 0) {
-      return res.status(404).json({ message: "Cannot find user with the given wallet ID" });
+      return res
+        .status(404)
+        .json({ message: "Cannot find user with the given wallet ID" });
     }
 
     res.status(200).json(user);
@@ -105,7 +109,9 @@ app.put("/api/opps/:oppurtunity_id/status/:Status", async (req, res) => {
     const user = await User.find({ oppurtunity_id: oppurtunityId});
 
     if (!user) {
-      return res.status(404).json({ message: "Cannot find user with the given wallet ID" });
+      return res
+        .status(404)
+        .json({ message: "Cannot find user with the given wallet ID" });
     }
 
     await User.findOneAndUpdate(
@@ -173,8 +179,6 @@ app.put("/api/invest/wallet/:wallet_id/oppurtunity_id/:oppurtunity_id", async (r
     res.status(500).json({ message: "Internal server error" });
   }
 });
-
-
 
 const satrt = async () => {
   try {

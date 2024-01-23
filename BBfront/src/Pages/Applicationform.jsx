@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
 import { useFormik } from 'formik';
 import './Page.css';
-
+import usestore from '../State/store' 
 
 
 const ApplicationForm = () => {
+  const { walletaddress, setaddress} = usestore(
+    (state) => ({
+      walletaddress: state.walletaddress,
+        setaddress: state.setaddress
+    })
+)
   const formik = useFormik({
     initialValues: {
       title: '',
@@ -19,9 +25,35 @@ const ApplicationForm = () => {
       zipCode: '',
       termsAndConditionsChecked: false,
     },
-    onSubmit: values => {
-      console.log("Entered values:", values);
-      // Handle form submission with values
+    onSubmit: async (values) => {
+      // Combine address fields into a single string
+      const address = `${values.street}, ${values.city}, ${values.state} ${values.zipCode}`;
+
+      try {
+        const response = await fetch('http://localhost:3000/api/opps', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            title: values.title,
+            Thumbnail: values.thumbnail,
+            Description: values.contactDetails,
+            amount_to_be_retured: values.amount,
+            pitch_Pdf: values.documentsLink,
+            oppurtunity_id: walletaddress,
+            Location: address,
+          }),
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        console.log('Form submitted successfully');
+      } catch (error) {
+        console.error('Error submitting form:', error);
+      }
     },
   });
 
@@ -43,6 +75,10 @@ const ApplicationForm = () => {
         <label className="form-label">
           Amount Requested [GETH]:
           <input className="form-input" type="number" name="amountRequested" value={formik.values.amountRequested} onChange={formik.handleChange} required />
+        </label>
+        <label className="form-label">
+          Return Date:
+          <input className="form-input" type="date" name="returnDate" value={formik.values.returnDate} onChange={formik.handleChange} required />
         </label>
         <label className="form-label">
           Description:
