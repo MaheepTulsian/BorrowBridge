@@ -1,10 +1,6 @@
 import mongoose from "mongoose";
 
 const oppo_schema = mongoose.Schema({
-<<<<<<< HEAD
-=======
-
->>>>>>> bf75ed71bc371fa201b803c89fd78868a00a402f
   title: {
     type: String,
     required: true,
