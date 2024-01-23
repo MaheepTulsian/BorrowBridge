@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const oppo_schema = mongoose.Schema({
-  oppurtunity_id: {
+  opportunity_id: {
     type: String,
     required: true,
   },
@@ -34,9 +34,9 @@ const oppo_schema = mongoose.Schema({
     required: true,
   },
 
-  Amount_Collected: {
+  Total_Amount_Collected: {
     type: Number,
-    required: true,
+    default: 0
   },
   Investors:[
     {
@@ -44,7 +44,7 @@ const oppo_schema = mongoose.Schema({
             type: String,
             required: true
         },
-        Amount:{
+        Amount_Investment:{
             type: Number,
             required: true
         },
