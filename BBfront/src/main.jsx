@@ -11,6 +11,8 @@ import {
 import Homepage from './Pages/Homepage.jsx';
 import Dashboard from './Pages/Dashboard.jsx'
 import Oppurtunity from './Pages/Oppurtunity.jsx';
+import Borrow from './Pages/Borrow.jsx';
+import Applicationform from './Pages/Applicationform.jsx'
 
 const router= createBrowserRouter(
   createRoutesFromElements(
@@ -18,6 +20,8 @@ const router= createBrowserRouter(
       <Route path='' element={<Homepage/>}/>
       <Route path='dashboard' element={<Dashboard/>}/>
       <Route path='oppurtunity/:id' element={<Oppurtunity/>}/>
+      <Route path='borrow' element={<Borrow/>}/>
+      <Route path='form' element={<Applicationform/>}/>
     </Route>
   )
 )
