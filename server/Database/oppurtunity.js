@@ -1,9 +1,11 @@
 import mongoose from "mongoose";
-
+import { v4 as uuidv4 } from "uuid";
 const oppo_schema = mongoose.Schema(
   {
     oppurtunity_id: {
       type: String,
+      default: uuidv4(), // Set a default value using the uuid library
+      unique: true,
       required: true,
     },
     title: {
@@ -28,7 +30,6 @@ const oppo_schema = mongoose.Schema(
     },
     token_Requested: {
       type: Number,
-      required: true,
     },
     Location: {
       type: String,
@@ -44,7 +45,8 @@ const oppo_schema = mongoose.Schema(
       type: Number,
     },
     duration_of_time: {
-      type: Number,
+      type: Date,
+      default: Date.now(),
     },
 
     Amount_Collected: {
