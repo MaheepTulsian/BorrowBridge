@@ -1,3 +1,19 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:root {
+    --padding-inline—section: 30px;
+}
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .outerlayer{
     border: solid 1px black;
     border-radius: 10px;
