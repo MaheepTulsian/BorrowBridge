@@ -7,6 +7,23 @@ import logo from '../assets/logo.png'
 import Popup from '../Components/Popup.jsx'
 import { Navigate } from 'react-router-dom';
 
+async function Checkuser(wallet) {
+  try {
+    // Replace 'your_backend_api_endpoint' with the actual endpoint URL
+    const response = await fetch('http://localhost:3000/api/wallet/'+wallet);
+    
+    if (!response.ok) {
+      throw new Error('Failed to fetch data');
+    }
+
+    const data = await response.json();
+    console.log('Fetched data:', data);    
+
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+}
+
 const Header = () => {
   const [isMetamaskInstalled, setIsMetamaskInstalled] = useState(false);
   const [isConnected, setIsConnected] = useState(false);
@@ -62,8 +79,14 @@ const Header = () => {
       const accounts = await ethereum.request({ method: "eth_requestAccounts" });
       setIsConnected(true);
       setAccounts(accounts);
+<<<<<<< Updated upstream
       setaddress(accounts)
       await fetchData(walletaddress);
+=======
+      setaddress(accounts);
+      Checkuser(accounts[0])
+
+>>>>>>> Stashed changes
     } catch (err) {
       console.error("error occured while connecting to MetaMask: ", err)
     }
