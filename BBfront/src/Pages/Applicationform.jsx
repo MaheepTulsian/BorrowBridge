@@ -19,9 +19,24 @@ const ApplicationForm = () => {
       zipCode: '',
       termsAndConditionsChecked: false,
     },
-    onSubmit: values => {
-      console.log("Entered values:", values);
-      // Handle form submission with values
+    onSubmit: async (values) => {
+      try {
+        const response = await fetch('http://localhost:3000/api/opps', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(values),
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        console.log('Form submitted successfully');
+      } catch (error) {
+        console.error('Error submitting form:', error);
+      }
     },
   });
 

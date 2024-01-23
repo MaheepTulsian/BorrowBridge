@@ -1,31 +1,43 @@
-import React from 'react'
-import Cards from '../Components/Cards'
+import React, { useEffect, useState } from 'react';
+import Cards from '../Components/Cards';
 
 const Dashboard = () => {
-  return (
-    <>
-    <div className="card-grid">
-    <Cards
-    id="TEST0"
-    title="Sample 1"
-    price="10 GoETH"
-    interest="15%"
-    />
-    <Cards
-    id="TEST1"
-    title="Sample 2"
-    price="20 GoETH"
-    interest="18%"
-    />
-    <Cards
-    id="TEST3"
-    title="Sample 2"
-    price="20 GoETH"
-    interest="18%"
-    />
-    </div>
-    </>
-  )
-}
+  const [opps, setOpps] = useState([]);
 
-export default Dashboard
+  const fetchAllOpps = async () => {
+    try {
+      const response = await fetch('http://localhost:3000/api/opps/allopps');
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      setOpps(data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      // Handle error, set opps to an empty array or handle it as needed
+    }
+  };
+
+  useEffect(() => {
+    fetchAllOpps();
+  }, []); // Empty dependency array ensures the effect runs only once on mount
+
+  return (
+    <><div className="card-grid">
+      {opps.map(item => (
+        <Cards
+          key={item._id}
+          id={item._id}
+          title={item.title}
+          price="10Geth"
+          interest="15%"
+        />
+      ))}
+       </div>
+    </>
+  );
+};
+
+export default Dashboard;
