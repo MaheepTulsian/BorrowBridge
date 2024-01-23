@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
@@ -14,6 +14,8 @@ import Oppurtunity from './Pages/Oppurtunity.jsx';
 import Borrow from './Pages/Borrow.jsx';
 import Applicationform from './Pages/Applicationform.jsx'
 import Applicationstatus from './Pages/Applicationstatus.jsx';
+import Autherror from './Pages/Autherror.jsx';
+
 
 const router= createBrowserRouter(
   createRoutesFromElements(
@@ -24,6 +26,7 @@ const router= createBrowserRouter(
       <Route path='borrow' element={<Borrow/>}/>
       <Route path='form' element={<Applicationform/>}/>
       <Route path='borrow/:id' element={<Applicationstatus/>}/>
+      <Route path='login' element={<Autherror/>}/>
     </Route>
   )
 )
