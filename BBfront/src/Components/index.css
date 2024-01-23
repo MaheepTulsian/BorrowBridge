@@ -3,10 +3,7 @@
     padding: 0px;
     box-sizing: border-box;
 }
-body{
-    position: relative;
-    min-height: 100vh;
-}
+
 :root {
     --padding-inline—section: 30px;
 }
@@ -64,52 +61,4 @@ h2{
     padding: 20px;
 }
 
-.linksss{
-    color: black;
-    text-decoration: none;
-}
-.Applicationflex{
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-evenly;
-}
-.statusbtn{
-    background-color: transparent;
-    text-decoration: black;
-    border: 1px solid red;
-    border-radius: 2px;
-    margin: 10px;
-    padding: 1px;
-}
-.contactbtn{
-    background-color: transparent;
-    text-decoration: black;
-    border: 1px solid red;
-    border-radius: 2px;
-    margin: 10px;
-    padding: 1px;
-}
-.datainfo{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.outelayer{
-    border: solid 1px black;
-    border-radius: 10px;
-    width: 150px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-h4{
-    margin: 0px;
-}
-.header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 10px;
-}
+
