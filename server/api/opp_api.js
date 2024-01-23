@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
   res.send("I am live");
 });
 
-app.post("/api/oppo", async (req, res) => {
+app.post("/api/opps", async (req, res) => {
   try {
     const oppo = await Oppo.create(req.body);
     res.status(200).json(oppo);
@@ -25,6 +25,18 @@ app.post("/api/oppo", async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
+
+app.get("/api/opps/:oppid" , async(req, res)=>{
+  try{
+    const oppo = await Oppo.findOne({oppurtunity_id: req.params.oppid});
+    res.status(200).json(oppo);
+  }catch(error){
+    console.log(error.message);
+    res.status(500).json({ message: error.message });
+  }
+}
+);
+
 
 const satrt = async () => {
   try {
