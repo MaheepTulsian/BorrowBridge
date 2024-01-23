@@ -3,7 +3,10 @@
     padding: 0px;
     box-sizing: border-box;
 }
-
+body{
+    position: relative;
+    min-height: 100vh;
+}
 :root {
     --padding-inline—section: 30px;
 }
