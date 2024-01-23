@@ -1,6 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
+import cors from "cors";
 import db from "../Database/connect.js";
 import User from '../../server/Database/userschema.js';
 import Oppo from "../../server/Database/oppurtunity.js";
