@@ -29,6 +29,19 @@ app.post("/api/opps", async (req, res) => {
   }
 });
 
+app.get("/api/opps/allopp", async (req, res) => {
+  try {
+    const oppo = await Oppo.find();
+    res.status(200).json(oppo);
+    if(oppo.length === 0){
+      return res.status(404).json({ message: "Cannot find any oppurtunity" });
+    }
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).json({ message: error.message });
+  }
+})
+
 app.get("/api/opps/:oppid" , async(req, res)=>{
   try{
     const oppo = await Oppo.find({oppurtunity_id: req.params.oppid});
