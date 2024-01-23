@@ -29,7 +29,7 @@ app.post("/api/opps", async (req, res) => {
   }
 });
 
-app.get("/api/opps/allopp", async (req, res) => {
+app.get("/api/opps/allopps", async (req, res) => {
   try {
     const oppo = await Oppo.find();
     res.status(200).json(oppo);
