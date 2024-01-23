@@ -1,13 +1,20 @@
+*{
+  margin: 0px;
+}
 .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-left: 0;
+    margin-right: 0;
+  
   }
   
   .nav_menu_horizontal {
     list-style: none;
     display: flex;
     gap: 20px;
+    margin:0%;
   }
   
   .nav_menu_horizontal li {
@@ -29,9 +36,10 @@
   .nav_container {
     background-color: #392467;
     width: 100%;
-    height: 5rem;
     position: fixed;
     top: 0;
+    margin-left: 0;
+    margin-right: 0;
     z-index: 11;
     display: flex;
     justify-content: space-between;
@@ -45,19 +53,22 @@
     gap: 20px;
   }
 
+  .nav_menu_horizontal > li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .quick_links{
     display: flex;
     justify-content: center;
     align-items: center; 
-  }
-  
-  a{
     text-decoration: none;
     color: white;
     transition: 2ms ease-out;
   }
-  a:hover{
-    color: blue;
+  .quick_links:hover{
+    color: #fff;
   }
   /* Responsive Styles */
   @media (max-width: 768px) {
@@ -74,4 +85,77 @@
       padding: 1rem 1rem; /* Adjusted padding for the button in smaller screens */
     }
   }
+  footer {
+    background: #030637; /* Keep the background color as black */
+    padding-top: 5rem;
+    font-size: 0.9rem;
+  }
+  .footer_container{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 5rem;
+  }
+  .footer_container>div h4{
+    margin-bottom: 1.2rem;
+  }
+  .footer_1 p{
+    margin-bottom: 1.2rem;
+  }
+
+  footer ul  li {
+    margin: 0 0 2rem; 
+  }
+  .footer_container {
+    background-color: #392467;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 11;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav_container{
+    color: #fff;
+  }
+  
+  .footer_4  {
+    margin: 0 0 2rem;
+    color:#fff;
+  }
+  .footer_1{
+    color: #fff;
+    
+  }
+  .footer_2{
+    color: #fff;
+    
+  }
+  .footer_3{
+    color: #fff;
+    
+  }
+  .permalinks{
+    color:#fff
+  }
+  
+  
+  .footer ul li {
+    margin-bottom: 0;
+  }
+  .footer_socials {
+    display: flex;
+    gap: 1rem;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .footer_container {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+ 
   
