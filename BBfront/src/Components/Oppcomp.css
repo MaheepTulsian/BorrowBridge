@@ -85,3 +85,21 @@ h3{
   .form-checkbox {
     margin-right: 5px;
   }
+
+  .locationopp{
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 5px;
+  }
+  .locationopp{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px;
+  }
+  .imageloc{
+   
+    height: 50px;
+  }

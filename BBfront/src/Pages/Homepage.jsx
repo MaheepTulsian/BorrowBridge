@@ -12,7 +12,7 @@ const Homepage = () => {
     <>
     <div class="hero-section">
         <div class="hero-left flex-center">
-            <h1 class="hero-left-heading">Empowering borrowers and investors through blockchain technology</h1>
+            <h1 class="hero-left-heading">Creating a Micro-Investment Platform for Growth Story of India</h1>
             <p class="hero-left-content">
                 Welcome to BorrowBridge, the decentralized lending platform that
                 connects borrowers and investors globally. Experience transparent and
