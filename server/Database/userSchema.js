@@ -34,7 +34,10 @@ const userSchema = mongoose.Schema({
     },
   ],
   Amount_Total_Invested: Number,
-});
+} ,
+{
+     timestamps: true,
+} );
 
 const User = mongoose.model("User", userSchema);
 
