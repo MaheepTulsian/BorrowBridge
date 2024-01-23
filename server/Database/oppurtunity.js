@@ -1,4 +1,4 @@
-import mongoose from ("mongoose");
+import mongoose from "mongoose";
 
 const oppo_schema = mongoose.Schema({
   oppurtunity_id: {
@@ -42,18 +42,17 @@ const oppo_schema = mongoose.Schema({
             type: Number,
             required: true
         },
-        timestamps: true
-
-    },
-    
-    
+    },  
   ],
   Status: [
     {
         type: String
     }
-]
-});
+  ]},
+  {
+    timestamps: true,
+  }
+);
 
 const Oppo = mongoose.model("Oppo", oppo_schema);
-module.exports = oppo;
+export default Oppo;

@@ -4,6 +4,7 @@ import {Right} from "../Components/Right"
 import {Left}from '../Components/Right';
 import './Page.css'
 
+
 const Oppurtunity = () => {
     const { id } = useParams();
   return (

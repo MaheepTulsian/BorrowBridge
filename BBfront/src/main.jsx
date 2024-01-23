@@ -13,6 +13,7 @@ import Dashboard from './Pages/Dashboard.jsx'
 import Oppurtunity from './Pages/Oppurtunity.jsx';
 import Borrow from './Pages/Borrow.jsx';
 import Applicationform from './Pages/Applicationform.jsx'
+import Applicationstatus from './Pages/Applicationstatus.jsx';
 
 const router= createBrowserRouter(
   createRoutesFromElements(
@@ -22,6 +23,7 @@ const router= createBrowserRouter(
       <Route path='oppurtunity/:id' element={<Oppurtunity/>}/>
       <Route path='borrow' element={<Borrow/>}/>
       <Route path='form' element={<Applicationform/>}/>
+      <Route path='borrow/:id' element={<Applicationstatus/>}/>
     </Route>
   )
 )

@@ -1,9 +1,12 @@
 import React from 'react'
 import './index.css'
 import MRIMAchine from '../assets/MRIMAchine.jpg';
+import { Link } from 'react-router-dom';
 
-const Application = () => {
+const Application = (props) => {
+  const link = '/borrow/'+props.id;
   return (
+    <Link className='linksss' to={link}>
     <div className="outerlayer">
     <div className="image">
         <img src={MRIMAchine} className="Boxheadimg" alt="" />
@@ -20,6 +23,7 @@ const Application = () => {
         </div>
     </div>
     </div>
+    </Link>
   )
 }
 
