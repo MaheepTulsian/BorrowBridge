@@ -105,9 +105,9 @@ const Header = () => {
         </div>
         <div class="deck2 flex-center">
 
-            <div class="about quick-link flex-center"><a href="/dashboard">Invest</a></div>
-            <div class="services quick-link flex-center"><a href="/borrow">Borrow</a></div>
-            <div class="contact quick-link flex-center"><a href="/contactUS">Contact Us</a></div>
+            <div class="about quick-link flex-center"><a href="/dashboard" className='navbar-links'>Invest</a></div>
+            <div class="services quick-link flex-center"><a href="/borrow" className='navbar-links'>Borrow</a></div>
+            <div class="contact quick-link flex-center"><a href="/contact" className='navbar-links'>Contact Us</a></div>
 
             
             <button class="nav-btn" onClick={isMetamaskInstalled ? connectMetaMask : installMetaMask} disabled={!isMetamaskInstalled}>

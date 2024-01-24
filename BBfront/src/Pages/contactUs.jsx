@@ -3,9 +3,12 @@ import './ContactUs.css';
 
 const ContactUs = () => {
   return (
+    <div className="contact-deck">
     <div className="contact-us-container">
       <h1>Contact Us</h1>
+      <br />
       <p>Feel free to reach out to us for any inquiries or feedback.</p>
+      <br />
 
       <form>
         <div className="form-group">
@@ -25,6 +28,7 @@ const ContactUs = () => {
 
         <button type="submit" className="submit-button">Send Message</button>
       </form>
+    </div>
     </div>
   );
 };
