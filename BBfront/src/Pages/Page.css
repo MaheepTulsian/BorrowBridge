@@ -22,6 +22,7 @@
 }
 
 .card-grid{
+    height: 90vh;
     display: grid;
     grid-template-rows: 4fr;
 }
@@ -57,4 +58,10 @@
     justify-content: center;
     gap: 20px;
     padding: 10px 20px;
+}
+.Borrowbtn{
+    border: none;
+    background-color: #A367b1;
+    color: #fff;
+    border-radius: 7px;
 }

@@ -30,7 +30,7 @@ const Borrow = () => {
   return (
     <>
     <center>
-    <button className="Borrowbtn">Fill The Form </button>
+    <a href="/form"><button className="Borrowbtn"> Fill The Form </button></a>
     </center>
     <div className="card-grid">
         <Application
