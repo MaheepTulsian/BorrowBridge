@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const Application = (props) => {
   const link = '/borrow/'+props.id;
   return (
-    <Link className='application-card' to={link}>
+    <Link className='application-card appheight' to={link}>
       <div className="applicationcard">
         <div className="card-image">
             <img src={props.img} className="Boxheadimg" alt="" />

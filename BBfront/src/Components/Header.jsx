@@ -59,12 +59,15 @@ const Header = () => {
     return isLoggedIn ? element : <Navigate to="/login" state={{ from: path }} replace={true} />;
   };
 
-  const { walletaddress, setaddress} = usestore(
+  const { walletaddress, setaddress, connected, setconnected} = usestore(
         (state) => ({
           walletaddress: state.walletaddress,
-            setaddress: state.setaddress
+            setaddress: state.setaddress,
+            connected: state.connected,
+            setconnected: state.setconnected,
         })
     )
+
 
   useEffect(() => {
     const { ethereum } = window;
@@ -83,6 +86,7 @@ const Header = () => {
       setAccounts(accounts);
       setaddress(accounts);
       Checkuser(accounts[0])
+      setconnected();
 
     } catch (err) {
       console.error("error occured while connecting to MetaMask: ", err)
@@ -111,7 +115,7 @@ const Header = () => {
 
             
             <button class="nav-btn" onClick={isMetamaskInstalled ? connectMetaMask : installMetaMask} disabled={!isMetamaskInstalled}>
-              {isConnected ? `${accounts[0]}` : 'Register with MetaMask'}
+              {connected ? `${walletaddress}` : 'Register with MetaMask'}
             </button>
         </div>
     </nav>

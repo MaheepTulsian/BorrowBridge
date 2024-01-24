@@ -5,12 +5,11 @@ import "../Components/Opportunity.css"
 import MRIMAchine from '../assets/MRIMAchine.jpg';
 
 
-
-const Left = () => {
+const Left = (props) => {
     return (
       <>
         <div className="inputboxleft">
-            <h3>MRI Scanner Fund</h3>
+            <h3>{props.title}</h3>
             <div className="inputboxen">
                 <div className="inputhead">
                     Enter Amount:

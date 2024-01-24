@@ -46,7 +46,9 @@ const Opportunity = () => {
             />
           </div>
           <div className="boxople">
-            <Left />
+            <Left 
+            title={opportunityData[0].title}
+            />
           </div>
         </div>
       )}

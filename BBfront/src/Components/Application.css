@@ -5,11 +5,14 @@
     justify-content: flex-start;
     /* width: 20vw; */
     padding: 10px;
-    height: 50%;
+    
     border: 1.5px black solid;
     text-decoration: none;
     border-radius: 10px;
     transition: box-shadow 0.3s ease-in-out;
+}
+.appheight{
+    height: 50%;
 }
 .application-card:hover{
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);

@@ -8,6 +8,12 @@ const store = (set) => ({
             walletaddress: add
         }))
     },
+    connected: "false",
+    setconnected: ()=> {
+        set((state)=>({
+            connected: !state.connected
+        }))
+    }
     
 }) 
 
