@@ -48,3 +48,10 @@ nav{
     background: #A367B1;
     color: #ffd1e3;
 }
+.navbar-links{
+    color: #fff;
+    text-decoration: none;
+}
+.navbar-links:hover{
+    color: #ffd1e3;
+}

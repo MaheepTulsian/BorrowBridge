@@ -3,7 +3,6 @@ import MetaMaskOnboarding from '@metamask/onboarding';
 import './Header.css'
 import usestore from '../State/store.js' 
 import logo from '../assets/logo.png'
-import investorDashboard from '../Pages/Dashboard.jsx'
 import Popup from '../Components/Popup.jsx'
 import { Link } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
@@ -105,9 +104,11 @@ const Header = () => {
             <img src={logo} alt="logo" class="logo"/>
         </div>
         <div class="deck2 flex-center">
-            <Link to="dashboard"><div class="about quick-link flex-center">Invest</div></Link>
-            <div class="services quick-link flex-center">Borrow</div>
-            <div class="contact quick-link flex-center">Contact Us</div>
+
+            <div class="about quick-link flex-center"><a href="/dashboard" className='navbar-links'>Invest</a></div>
+            <div class="services quick-link flex-center"><a href="/borrow" className='navbar-links'>Borrow</a></div>
+            <div class="contact quick-link flex-center"><a href="/contact" className='navbar-links'>Contact Us</a></div>
+
             
             <button class="nav-btn" onClick={isMetamaskInstalled ? connectMetaMask : installMetaMask} disabled={!isMetamaskInstalled}>
               {isConnected ? `${accounts[0]}` : 'Register with MetaMask'}

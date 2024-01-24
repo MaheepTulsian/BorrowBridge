@@ -15,7 +15,7 @@ import Borrow from './Pages/Borrow.jsx';
 import Applicationform from './Pages/Applicationform.jsx'
 import Applicationstatus from './Pages/Applicationstatus.jsx';
 import Autherror from './Pages/Autherror.jsx';
-
+import ContactUs from './Pages/contactUs.jsx'
 
 const router= createBrowserRouter(
   createRoutesFromElements(
@@ -27,6 +27,7 @@ const router= createBrowserRouter(
       <Route path='form' element={<Applicationform/>}/>
       <Route path='borrow/:id' element={<Applicationstatus/>}/>
       <Route path='login' element={<Autherror/>}/>
+      <Route path='contact' element={<ContactUs/>}/>
     </Route>
   )
 )

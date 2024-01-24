@@ -46,7 +46,8 @@ app.get("/test", async (req, res) => {
 //adding opportunity_id in database in opportunity collection
 app.post("/api/opps", async (req, res) => {
   try {
-    const oppo = await Oppo.create(req.body);
+    const oppo = new Oppo(req.body);
+    await oppo.save();
     res.status(200).json(oppo);
   } catch (error) {
     console.log(error.message);
