@@ -34,16 +34,17 @@ contract BBtoken is ERC1155, Ownable {
         payable(owner()).transfer(msg.value);
    }
 
-    function purchaseTokens(uint256 tokenId, uint256 amount) external payable {
+    function purchaseTokens(uint256 tokenId, uint256 amount, address investor) external payable {
         uint256 sellingPrice = _sellingPrices[tokenId];
         require(msg.value >= sellingPrice * amount, "Incorrect payment amount");
 
         // Transfer tokens to the buyer
-        _safeTransferFrom(owner(), msg.sender, tokenId, amount, "");
+        _safeTransferFrom(owner(), investor, tokenId, amount, "");
 
         payable(owner()).transfer(msg.value);
     }
-     function getTotalSupply(uint256 tokenId) external view returns (uint256) {
+    
+    function getTotalSupply(uint256 tokenId) external view returns (uint256) {
         return totalsupply[tokenId];
     }
 
